@@ -45,7 +45,7 @@ const studentsInfo = [
   {
     name: "Ronke Akingbade",
     age: "25+",
-    image: "/ronke2.jPG",
+    image: "/ronke2.jpg",
     specialty: "Doubles Specialist",
     achievements: ["Runner-up, 2017 Ikoyi Masters", "Former WTF-ranked player"],
     ranking: "NTF Singles:#8(2020)",
