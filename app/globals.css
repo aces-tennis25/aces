@@ -1,0 +1,34 @@
+
+@import "tw-animate-css";
+
+/* @custom-variant dark (&:is(.dark *)); */
+
+@import "tailwindcss";
+
+
+:root {
+  --primary-green: #2E7D32;     /* Deep forest green for logo/headers */
+--tennis-yellow: #FFD600;     /* Bright tennis ball yellow */
+--navy-blue: #1A237E;         /* Deep navy for contrast */
+
+/* Neutrals */
+--white: #FFFFFF;
+--light-gray: #F5F5F5;        /* Background sections */
+--text-gray: #424242;         /* Body text */
+--border-gray: #E0E0E0;       /* Borders/dividers */
+}
+
+
+body {
+  font-family: "Raleway", sans-serif;
+ 
+  overflow-x: hidden;
+  /* color: "#424242"; */
+  
+}
+.navbar {
+  font-size: 18px;
+}
+h1 {
+ font-family: "Oswald", sans-serif;
+}
