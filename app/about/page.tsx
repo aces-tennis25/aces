@@ -22,10 +22,7 @@ const page = () => {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section
-       
-        className="relative h-[500px] "
-      >
+      <section className="relative h-[500px] ">
         <div className="absolute w-full h-full overflow-hidden">
           <div>
             <Image
@@ -35,14 +32,16 @@ const page = () => {
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-500"></div>
           </div>
-          <motion.div  initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.2,
-          ease: [0.25, 0.46, 0.45, 0.94],
-        }}
-           className="absolute inset-0  flex flex-col items-center justify-center lg:mt-5 mx-auto text-center max-w-4xl px-4">
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            className="absolute inset-0  flex flex-col items-center justify-center lg:mt-5 mx-auto text-center max-w-4xl px-4"
+          >
             <Badge className="bg-green-100 text-green-800 mb-4">
               Our Story
             </Badge>
@@ -149,7 +148,7 @@ const page = () => {
                   </p>
                   <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
                     A former professional tennis player with over 20 years of
-                    coaching experience, Michael founded Tennis Academy with a
+                    coaching experience, Abel founded Aces Tennis Academy with a
                     vision to revolutionize tennis education. His innovative
                     teaching methods and dedication to student success have made
                     our academy a global leader in tennis training.
