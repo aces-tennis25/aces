@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import aboutImg from "@/public/aboutImg.jpg";
+import about from "@/public/about.jpg";
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -77,7 +77,7 @@ const contactInfo = [
   {
     icon: <LuMapPin />,
     title: "Address",
-    description: "123, Tennis Court Lane, Chicago",
+    description: "Parkforest Tennis and Health Club, 290 Westwood Dr, Park Forest, IL 60466, United States.",
   },
   {
     icon: <FiPhone />,
@@ -96,9 +96,9 @@ const contactInfo = [
     icon: <MdAlarm />,
     title: "Operating Hours",
     description: [
-      "Monday  - Friday: 6:00 Am - !0;00 PM",
-      "Saturday: 7:00 Am - 8: 00 PM",
-      "Sunday: 8:00 Am - 6:00 PM",
+      "Monday: Friday: 6:00 AM - 8:00 PM",
+      "Saturday: 7:00 AM - 5:00 PM",
+      "Sunday: Closed",
     ],
   },
 ];
@@ -107,7 +107,7 @@ const questionsInfo = [
   {
     title: "What Should I bring to my first session?",
     response:
-      "Just bring cofortable athletic wear, tennis shoes, and a water bottle. We provide rackets for beginners during trial sessions",
+      "Just bring comfortable athletic wear, tennis shoes, a water bottle and a racket.",
   },
   {
     title: "What age groups do you accept?",
@@ -166,9 +166,9 @@ const Page = () => {
     <div className="min-h-scren">
       <div className="relative h-[500px] w-full group cursor-pointer overflow-hidden">
         <Image
-          src={aboutImg}
+          src={about}
           alt="img"
-          className="w-full min-h-[500px] object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+          className="w-full h-full min-h-[600px] object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-500"></div>
         <motion.div
@@ -179,7 +179,7 @@ const Page = () => {
             delay: 0.2,
             ease: [0.25, 0.46, 0.45, 0.94],
           }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center p-10 mx-auto max-w-4xl"
+          className="absolute inset-0 flex flex-col items-center justify-center text-center p-10 lg:mt-20 mx-auto max-w-4xl"
         >
           <h1 className="text-white font-bold text-5xl">Get In Touch</h1>
           <p className="text-white leading-relaxed text-lg sm:text-xl">

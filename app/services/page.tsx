@@ -3,14 +3,17 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import aboutImg from "@/public/aboutImg.jpg";
+import about from "@/public/about.jpg";
 
 import { TbUsers } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa";
 import { FiMessageCircle, FiTarget } from "react-icons/fi";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
+import { IoFitnessSharp } from "react-icons/io5";
 import { MdAccessAlarm } from "react-icons/md";
 import { GoTrophy } from "react-icons/go";
+import { LiaChildSolid } from "react-icons/lia";
+import { FaCertificate } from "react-icons/fa";
 
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -27,7 +30,7 @@ const serviceData = [
       "Flexible scheduling",
       "Progress tracking",
     ],
-    price: "$80",
+    price: "$100",
     time: "per hour session",
     btnText: "Book Private Session",
     isPopular: false,
@@ -42,10 +45,19 @@ const serviceData = [
       "Competitive drills",
       "Social tennis environment",
     ],
-    price: "$35",
+    price: "$40",
     time: "per person/session",
     btnText: "Join Group Session",
-    isPopular: true,
+    isPopular: false,
+  },
+  {
+    name: "Cardio Tennis",
+    icon: <IoFitnessSharp />,
+    text: "Fun like fitness tennis session that improves your cardio while you improve your game and catch fun.",
+    price: "$20",
+    time: "per person/session",
+    btnText: "Join Cardio Tennis",
+    isPopular: false,
   },
   {
     name: "Consultations",
@@ -57,27 +69,39 @@ const serviceData = [
       "Mental game coaching",
       "Performance analysis",
     ],
-    price: "$120",
+    price: "$150",
     time: "per consultation",
     btnText: "Book Consultation",
-    isPopulr: false,
+    isPopular: false,
   },
 ];
 
 const levelData = [
   {
+    icon: <LiaChildSolid />,
+    name: "Beginners (Children)",
+    content: "",
+    levels: [
+      "Red Balls (Age 3-7): Played in a reduced courst size of 36 by 18 inches, Balls are larger and light, Smaller size of rackets.",
+      "Orange Balls (Ages 7-8): Lighter to develop very good playing technique",
+      "Green Balls (Ages 8-10): Higher comprehension than the red and orange balls. Plays full size tennis court.",
+    ],
+    isChild: true,
+    badge: "Child 3-10",
+  },
+  {
     icon: <FiTarget />,
-    name: "Beginner Level",
+    name: "Beginner Level (Adult)",
     content:
       "Perfect for those new to tennis. Learn fundamental techniques, basic rules, and develop proper form from the ground up.",
     levels: [
       "Basic Stroke Techniques",
-      "Court Positioning",
-      "Equipment guidance",
+      "Match Play",
+      "Scores counting",
       "Fun, encouragement environment",
     ],
     isBeginner: true,
-    badge: "Ages 3+ Welcome",
+    badge: "Adult Welcome",
   },
   {
     icon: <MdAccessAlarm />,
@@ -89,10 +113,9 @@ const levelData = [
       "Match strategy development",
       "Fitness and conditioning",
       "Tournament preparation",
-      "Mental game training",
     ],
     isIntermediate: true,
-    badge: "1+ Years Experience",
+    badge: "Players with prior knowledge & skill"
   },
   {
     icon: <GoTrophy />,
@@ -103,7 +126,7 @@ const levelData = [
       "High-performance training",
       "Advanced tactical analysis",
       "Sports psychology",
-      "College recruitment prep",
+      "High performance Fitness",
       "Professional pathway guidance",
     ],
     isAdvanced: true,
@@ -122,6 +145,11 @@ const extraServices = [
     name: "Summer camps",
     text: "Intensive training camps during school holidays.",
   },
+  {
+    icon: <FaCertificate />,
+    name: "PTR Certification",
+    text: "Earn a cerftificate directly from the Professional Tennis Registry."
+  }
 ];
 
 interface LevelItem {
@@ -129,6 +157,7 @@ interface LevelItem {
   name: string;
   content: string;
   levels: string[];
+  isChild?: boolean;
   isBeginner?: boolean;
   isIntermediate?: boolean;
   isAdvanced?: boolean;
@@ -140,6 +169,7 @@ const getIconBackground = (item: LevelItem): string => {
   if (item.isBeginner) return "bg-blue-100 text-blue-600";
   if (item.isIntermediate) return "bg-orange-100 text-orange-600";
   if (item.isAdvanced) return "bg-red-100 text-red-600";
+  if (item.isChild) return "bg-pink-100 text-pink-600";
   return "bg-gray-100 text-gray-600";
 };
 
@@ -147,12 +177,14 @@ const getIconColor = (item: LevelItem): string => {
   if (item.isBeginner) return "text-blue-600";
   if (item.isIntermediate) return "text-orange-600";
   if (item.isAdvanced) return "text-red-600";
+  if (item.isChild) return "text-pink-600";
   return "text-gray-600";
 };
 const getBadgeColor = (item: LevelItem): string => {
   if (item.isBeginner) return "border-blue-600 text-blue-600 text-xs";
   if (item.isIntermediate) return "border-orange-600 text-orange-600 text-xs";
   if (item.isAdvanced) return "border-red-600 text-red-600 text-xs";
+  if (item.isChild) return "border-pink-600 text-pink-600 text-xs";
   return "bg-gray-100 text-gray-600";
 };
 // };
@@ -162,20 +194,21 @@ const page = () => {
     <section className="min-h-screen">
       <div className="relative h-[500px] w-full group cursor-pointer overflow-hidden">
         <Image
-          src={aboutImg}
+          src={about}
           alt="img"
-          
-          className="w-full min-h-[500px] object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+          className="w-full h-full min-h-[600px]  object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-500"></div>
-        <motion.div  initial={{ y: 100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.2,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-        className="absolute inset-0 flex flex-col items-center justify-center text-center p-10 mx-auto max-w-4xl">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          className="absolute inset-0 flex flex-col items-center justify-center lg:mt-20 text-center p-10 mx-auto max-w-4xl"
+        >
           <Badge className="bg-green-100 text-green-800 hover:bg-green-100 font-bold text-xs rounded-2xl">
             Our Services
           </Badge>
@@ -184,7 +217,7 @@ const page = () => {
           </h1>
           <p className="text-white leading-relaxed text-lg sm:text-xl mt-3">
             From beginner fundamentals to advanced competitive training, we
-            offer personalized programs designed to elevate your game to the
+            offer personalized programs designed to upgrade your game to the
             next level.
           </p>
         </motion.div>
@@ -193,7 +226,7 @@ const page = () => {
       {/* main services */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-6 sm-8">
+          <div className="grid lg:grid-cols-2 gap-6 sm-8">
             {/* private sessions */}
             {serviceData.map((item, index) => (
               <Card
@@ -226,7 +259,7 @@ const page = () => {
 
                   <ul className="space-y-2 sm:space-y-3">
                     <div className="flex flex-col items-start space-x-2 space-y-3">
-                      {item.services.map((service, serviceIndex) => (
+                      {item.services?.map((service, serviceIndex) => (
                         <li
                           key={serviceIndex}
                           className="flex items-start gap-3"
@@ -280,7 +313,7 @@ const page = () => {
               designed for optimal progression
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gp-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-6 sm:gp-8">
             {levelData.map((item, index) => (
               <Card key={index} className="border-0 shadow-lg bg-white">
                 <CardContent className="p-6 sm:p-8 text-center">
@@ -333,7 +366,7 @@ const page = () => {
               Comprehensive support for your tennis journey
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-6">
             {extraServices.map((item, index) => (
               <Card
                 key={index}

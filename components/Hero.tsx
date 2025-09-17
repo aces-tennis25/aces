@@ -25,48 +25,48 @@ const sessions = [
   {
     icon: <GrTrophy />,
     name: "Group Sessions",
-    text: "Train with peers in a motivating environment while learning teamwork and competitive strategies.",
+    text: "Our group sessions is motivating and challenging and it comes with form while learning with competitive strategies.",
     button: "Learn More",
   },
   {
     icon: <MdOutlineAccessAlarms />,
     name: "Consultations",
-    text: "Strategic planning sessions to develop your tennis career path and competitive game plan.",
+    text: "Strategic planning sessions to develop your tennis career path and developing school programs with certification on behalf of PTR.",
     button: "Learn More",
   },
 ];
 const gallery = [
   {
     alt: "first",
-    image: "/academy1.jpg",
+    image: "/training8.jpg",
   },
   {
     alt: "first",
-    image: "/academy2.jpg",
+    image: "/training.jpg",
   },
   {
     alt: "first",
-    image: "/academy3.jpg",
+    image: "/training10.jpg",
   },
   {
     alt: "first",
-    image: "/academy4.jpg",
+    image: "/training2.jpg",
   },
   {
     alt: "first",
-    image: "/academy5.png",
+    image: "/training4.jpg",
   },
   {
     alt: "first",
-    image: "/academy6.jpg",
+    image: "/new6.jpg",
   },
   {
     alt: "first",
-    image: "/academy7.jpg",
+    image: "/training6.jpg",
   },
   {
     alt: "first",
-    image: "/academy8.png",
+    image: "/training9.jpg",
   },
 ];
 
@@ -98,14 +98,13 @@ const Hero = () => {
           className="absolute inset-0 flex flex-col items-center justify-center text-center   mt-20 max-xl:mt-10 p-40"
         >
           <h1 className="2xl:text-7xl 2xl:w-[600px] text-5xl  text-white font-bold">
-            Best <span className="text-green-600">Tennis School</span> &
-            Exclusive Club
+            Best <span className="text-green-600">Tennis Training</span>
+            Program
           </h1>
           <p className="text-white w-full 2xl:max-w-[700px] max-xl:w-[350px] text-lg mt-4">
             Welcome to the ultimate tennis destination. Whether you&apos;re new
-            to the game or an experienced player, our expert coaches, excellent
-            facilities, and welcoming community help you grow, compete, and
-            thrive—every step of the way.
+            to the game or an experienced player, our expert coaches help you
+            grow, compete, and thrive—every step of the way.
           </p>
           <Button className="group bg-green-600 hover:bg-green-700 text-white text-lg rounded-xl px-8 py-6 mt-5">
             <Link href="/contact">Register Now</Link>
@@ -120,8 +119,7 @@ const Hero = () => {
             Our Services
           </h1>
           <p className="text-xl max-xl:text-base text-gray-600 w-full max-w-[600px] max-xl:max-w-[580px]">
-            Comprehensive tennis training programs tailored to your skill level
-            and goals
+            Excellent tennis training programs doctored to your level and goals
           </p>
         </div>
 

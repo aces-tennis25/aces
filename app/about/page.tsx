@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-import Stats from "@/components/Stats";
+// import Stats from "@/components/Stats";
 
 import { BiAward } from "react-icons/bi";
 import { FiTarget } from "react-icons/fi";
@@ -14,9 +14,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 
-import train from "@/public/train.jpeg";
-import aboutImg from "@/public/aboutImg.jpg";
-import abel from "@/public/abel.jpg";
+import training2 from "@/public/training2.jpg";
+import about from "@/public/about.jpg";
+import coach from "@/public/coach.jpg";
 
 const page = () => {
   return (
@@ -26,9 +26,10 @@ const page = () => {
         <div className="absolute w-full h-full overflow-hidden">
           <div>
             <Image
-              src={aboutImg}
+              src={about}
+              fill
               alt="about aces tennis"
-              className="min-h-[500px] h-full w-full  object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+              className="min-h-[600px] h-full w-full  object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-500"></div>
           </div>
@@ -40,7 +41,7 @@ const page = () => {
               delay: 0.2,
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
-            className="absolute inset-0  flex flex-col items-center justify-center lg:mt-5 mx-auto text-center max-w-4xl px-4"
+            className="absolute inset-0  flex flex-col items-center justify-center lg:mt-20 mx-auto text-center max-w-4xl px-4 "
           >
             <Badge className="bg-green-100 text-green-800 mb-4">
               Our Story
@@ -50,18 +51,15 @@ const page = () => {
             </h1>
             <p className="text-lg sm:text-xl text-white leading-relaxed">
               For over 26 years, we&#39;ve been dedicaed to nuturing tennis
-              talent and creating champions. Our academy has become a beacon of
-              excellence in tennis education, serving students from 25 countries
-              worldwide.{" "}
+              talent and creating champions. Our training has become a beacon of
+              excellence, serving students across the globe .{" "}
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* stats */}
-      <div className=" relative">
-        <Stats />
-      </div>
+      <div className=" relative">{/* <Stats /> */}</div>
 
       {/* academy journey */}
       <section className="py-20 bg-gray-50">
@@ -71,32 +69,31 @@ const page = () => {
               <h2 className="text-4xl font-bold">Our Academy&#39;s Journey</h2>
               <div className="space-y-6 text-gray-600 mt-5">
                 <p className="text-lg leading-relaxed">
-                  Founded in 2009, Tennis Academy began as a small local
-                  training center with a big dream: to make world-class tennis
-                  coaching accessible to players of all levels. What started
-                  with just 10 students has grown into an internationally
-                  recognized institution.
+                  Founded in 2009, Aces Tennis Academy began as a small local
+                  training center in Lagos, Nigeria with a big dream: to make
+                  world-class tennis coaching accessible to players of all
+                  levels. What started with few students has produced
+                  internationally recognized champions.
                 </p>
 
                 <p className="text-lg leading-relaxed">
                   Our academy has consistently produced tournament winners,
                   college scholarship recipients, and professional players.
-                  We&#39;ve built our reputation on personalized coaching,
-                  state-of-the-art facilities, and an unwavering commitment to
-                  each student&#39;s success.
+                  We&#39;ve built our reputation on personalized coaching and an
+                  unwavering commitment to each student&#39;s success.
                 </p>
 
                 <p className="text-lg leading-relaxed">
-                  Today, we&#39;re proud to serve students from 25 countries,
-                  with our alumni competing at national and international
-                  levels. Our holistic approach combines technical excellence
-                  with mental conditioning and physical fitness.
+                  Today, we&#39;re proud to say that out alumni students are
+                  competing at national and international levels. Our training
+                  programs take a holistic approach by combining technical
+                  excellence, mental conditioning, and physical fitness.
                 </p>
               </div>
             </div>
             <div className="relative">
               <Image
-                src={train}
+                src={training2}
                 alt="train"
                 width={600}
                 height={500}
@@ -116,14 +113,14 @@ const page = () => {
                 Meet Our CEO
               </h2>
               <p className="text-gray-600 text-lg sm:text-xl">
-                The Visionary behind Aces Tennis Academy&#39;s Sucess
+                The Visionary behind Aces Tennis Academy&#39;s Success
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mt-8">
               <div className="relative order-2 lg:order-1">
                 <Image
-                  src={abel}
+                  src={coach}
                   alt="ceo"
                   width={500}
                   height={500}
@@ -147,11 +144,11 @@ const page = () => {
                     Founder & CEO
                   </p>
                   <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
-                    A former professional tennis player with over 20 years of
-                    coaching experience, Abel founded Aces Tennis Academy with a
-                    vision to revolutionize tennis education. His innovative
-                    teaching methods and dedication to student success have made
-                    our academy a global leader in tennis training.
+                    A former tennis player with over 20 years of coaching
+                    experience, Abel founded Aces Tennis Academy with a vision
+                    to revolutionize tennis education. His methodology and
+                    dedication to student success have made him a Sort For
+                    tennis coach in the Tennis Industry.
                   </p>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
@@ -162,8 +159,12 @@ const page = () => {
                         Achievements
                       </h4>
                       <ul className="list-disc text-xs sm:text-sm text-gray-600 space-y-1">
-                        <li>Former ATP Ranked Player</li>
-                        <li>3x National Champion</li>
+                        <li>
+                          Has many Laurels as former Nigerian Junior Coach.
+                        </li>
+                        <li>
+                          Produced Many International and National Players
+                        </li>
                         <li>Certified Master Coach</li>
                         <li>Sports Psychology Degree</li>
                       </ul>
@@ -177,9 +178,9 @@ const page = () => {
                         Philosophy
                       </h4>
                       <p className="text-xs text-gray-600 sm:text-sm space-y-1">
-                        &quot;Every student has unique potential. Our role is to
-                        unlock that potential through personalized coaching,
-                        mental strength training, and unwavering support.&quot;
+                        &quot;Every child is a Champion. Our role is to train
+                        and guide our players to the path of success in tennis
+                        and Education. &quot;
                       </p>
                     </CardContent>
                   </Card>
@@ -189,9 +190,9 @@ const page = () => {
                       Recognition & Awards
                     </h4>
                     <div className="grid sm:grid-cols-2 gap-2 sm:gap-4 text-xs sm:text-sm text-gray-600">
-                      <div>
+                      <div className="items-center justify-center mt-2">
                         <p>🏆 Coach of the Year</p>
-                        <p>🌟 Excellence in Tennis Education</p>
+                        {/* <p>🌟 Excellence in Tennis Education</p> */}
                       </div>
                       <div>
                         <p>🎖️ International Coaching Certfication</p>
@@ -223,10 +224,10 @@ const page = () => {
                     Our Mission
                   </h2>
                   <p className="text-gray-600 leading-relaxed">
-                    To provide world-class tennis education that develops not
-                    just skilled players, but confident individuals who carry
-                    the values of discipline, perseverance, and sportsmanship
-                    throughout their lives.
+                    To provide world-class tennis training that develops champs
+                    both on and off the court who carry the values of
+                    discipline, perseverance, and sportsmanship throughout their
+                    lives.
                   </p>
                 </CardContent>
               </Card>
@@ -240,10 +241,8 @@ const page = () => {
                     Our Vision
                   </h2>
                   <p className="text-gray-600 leading-relaxed">
-                    To be the global leader in tennis education, recognized for
-                    our innovative teaching methods, exceptional student
-                    outcomes, and positive impact on the tennis community
-                    worldwide.
+                    To see that all our students are successful through tennis
+                    and love the game throughout their lives.
                   </p>
                 </CardContent>
               </Card>

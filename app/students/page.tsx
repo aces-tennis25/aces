@@ -1,24 +1,24 @@
 "use client";
 import React from "react";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import aboutImg from "@/public/aboutImg.jpg";
+import about from "@/public/about.jpg";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import AchievementStats from "@/components/AchievementStats";
+// import AchievementStats from "@/components/AchievementStats";
 import { CiStar } from "react-icons/ci";
 import { GoTrophy } from "react-icons/go";
 
-import { FiTarget } from "react-icons/fi";
+// import { FiTarget } from "react-icons/fi";
 
 const studentsInfo = [
   {
     name: "Oyinlomo Barakat Quadre",
-    age: "21",
+    age: "22",
     image: "/oyin.jpg",
-    specialty: "Serve & Volley, Hard Court Specialist",
+    // specialty: "Serve & Volley, Hard Court Specialist",
     achievements: [
       "African Games Bronze(2019)",
       "Multiple ITF Junior Titles",
@@ -26,17 +26,17 @@ const studentsInfo = [
       "WTA Ranking",
       "College tennis at FIU",
     ],
-    ranking: "National No.1 (2018)",
+    ranking: "National Nigeria No.1",
   },
   {
     name: "Bulus Christopher",
-    age: "24",
+    age: "25+",
     image: "/bulus.jpg",
-    specialty:
-      "Powerful forehand, Hard Court Specialist, Aggressive baseline player",
+    // specialty:
+    //   "Powerful forehand, Hard Court Specialist, Aggressive baseline player",
     achievements: [
       "2025 Rainoil National Open Champion",
-      "Davies Cup representative",
+      "Nigeria Davies Cup representative",
       "College All-American (USA)",
       "ITF Junior Titles",
     ],
@@ -46,19 +46,25 @@ const studentsInfo = [
     name: "Ronke Akingbade",
     age: "25+",
     image: "/ronke2.jpg",
-    specialty: "Doubles Specialist",
-    achievements: ["Runner-up, 2017 Ikoyi Masters", "Former WTF-ranked player"],
+    // specialty: "Doubles Specialist",
+    achievements: [
+      "Runner-up, 2017 Ikoyi Masters",
+      "Former WTF-ranked player",
+      "CBN winner",
+    ],
     ranking: "NTF Singles:#8(2020)",
   },
   {
     name: "Joseph Imeh",
     age: "25+",
     image: "/joseph.jpg",
-    specialty: "Serve & Volley, Hard Court Specialist",
+    // specialty: "Serve & Volley, Hard Court Specialist",
     achievements: [
       "Winner, 2017 Rainoil Open Champion",
       "Multiple national titles",
+      "Multiple ITF Junior Titles",
       "Longtime national circuit top seed",
+      "Nigeria Davies Cup representative",
     ],
     ranking: "NTF Men's Singles: #1(2020)",
   },
@@ -66,15 +72,19 @@ const studentsInfo = [
     name: "Mariam Alli-Balogun",
     age: "22",
     image: "/mariam3.jpg",
-    specialty: "Serve & Volley, Doubles Specialist",
-    achievements: ["Finalist, Presidential Tennis Cup"],
+    // specialty: "Serve & Volley, Doubles Specialist",
+    achievements: [
+      "Finalist",
+      "Presidential Tennis Cup",
+      "College All-American (USA)",
+    ],
     ranking: "Lagos State top 5 (2019)",
   },
   {
     name: "Jumai Mohammed",
     age: "22",
     image: "/jumai.jpg",
-    specialty: "Serve & Volley, Hard Court Specialist",
+    // specialty: "Serve & Volley, Hard Court Specialist",
     achievements: [
       "College Scholarship Recipient (USA)",
       "Singles and Doubles National Champion",
@@ -116,13 +126,15 @@ const page = () => {
     <div className="min-h-screen">
       <div className="relative h-[500px] w-full group cursor-pointer overflow-hidden">
         <Image
-          src={aboutImg}
+          src={about}
           alt="img"
-          className="w-full min-h-[500px] object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+          className="w-full h-full min-h-[600px] object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-500"></div>
-        <motion.div className="absolute inset-0 flex flex-col items-center justify-center text-center p-10 mx-auto max-w-4xl mt-4">
-          <Badge className="bg-green-100 text-green-800 font-bold rounded-2xl text-xs ">Our Champions</Badge>
+        <motion.div className="absolute inset-0 flex flex-col items-center justify-center text-center lg:mt-25 p-10 mx-auto max-w-4xl mt-4">
+          <Badge className="bg-green-100 text-green-800 font-bold rounded-2xl text-xs ">
+            Our Champions
+          </Badge>
           <h1 className="text-white font-bold text-5xl mt-3">
             Top Students & Success Stories
           </h1>
@@ -133,9 +145,9 @@ const page = () => {
           </p>
         </motion.div>
       </div>
-      <section>
+      {/* <section>
         <AchievementStats />
-      </section>
+      </section> */}
 
       {/* students grid */}
 
@@ -177,13 +189,13 @@ const page = () => {
                     <p className="text-gray-600">Age: {student.age}</p>
                   </div>
                   <div className="mb-4">
-                    <div className="flex items-center space-x-2 mb-2">
+                    {/* <div className="flex items-center space-x-2 mb-2">
                       <FiTarget className="h-4 w-4 text-green-600" />
                       <span className="text-sm font-medium text-gray-900">
                         Specialty
                       </span>
-                    </div>
-                    <p className="text-sm text-gray-600">{student.specialty}</p>
+                    </div> */}
+                    {/* <p className="text-sm text-gray-600">{student.specialty}</p> */}
                   </div>
                   <div className="mb-6">
                     <div className="flex items-center space-x-2 mb-3">

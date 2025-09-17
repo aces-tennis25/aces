@@ -10,19 +10,23 @@ import { CiMail } from "react-icons/ci";
 const socials = [
   {
     path: "https://web.facebook.com/p/ACES-Tennis-100067608345147/?_rdc=1&_rdr#",
-    icon: <FaFacebook className="hover:bg-blue-600" />,
+    icon: <FaFacebook  />,
+    bgColor: "bg-blue-600"
   },
   {
     name: "https://www.linkedin.com/in/abel-ubiebi-b8157719/",
-    icon: <FaLinkedin className="hover:bg-blue-700" />,
+    icon: <FaLinkedin  />,
+    bgColor: "bg-blue-700"
   },
   {
     path: "https://www.instagram.com/aces_tennis?utm_source=ig_web_button_share_sheet&igsh=MXVpY2p0YTI0eng2cw==",
-    icon: <FaInstagram className="hover:bg-pink-600" />,
+    icon: <FaInstagram  />,
+    bgColor: "bg-pink-600"
   },
   {
     path: "https://wa.me/13124937113",
-    icon: <FaWhatsapp className="hover:bg-green-500" />,
+    icon: <FaWhatsapp />,
+    bgColor: "bg-green-500"
   },
 ];
 
@@ -62,7 +66,7 @@ const services = [
 
 const contact = [
   {
-    name: "123 WestWood IL, United States",
+    name: "290 Westwood Dr, Park Forest, IL 60466, United States.",
     icon: <GrLocationPin className="text-pink-600 "/>
   },
    {
@@ -93,13 +97,13 @@ const Footer = () => {
               </p>
 
               {/* social media links */}
-              <div className="flex gap-3">
+              <div className={`flex gap-3 `}>
                 {socials.map((item, index) => {
                   return (
                     <Link
                       key={index}
                       href={`${item.path}`}
-                      className= {`text-white text-lg w-10 h-10 bg-gray-800 rounded-full p-3 flex items-center justify-center transition-colors duration-300`}
+                      className= {`text-white text-lg w-10 h-10 bg-gray-800 rounded-full p-3 flex items-center justify-center transition-colors duration-300 hover:${item.bgColor}`}
                     >
                       {item.icon}
                     </Link>
