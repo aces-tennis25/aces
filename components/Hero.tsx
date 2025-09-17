@@ -58,7 +58,7 @@ const gallery = [
   },
   {
     alt: "first",
-    image: "/new6.jpg",
+    image: "/new.jpg",
   },
   {
     alt: "first",
