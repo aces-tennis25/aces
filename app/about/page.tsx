@@ -16,7 +16,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import training2 from "@/public/training2.jpg";
 import about from "@/public/about.jpg";
-import coach from "@/public/coach.jpg";
+import coach1 from "@/public/coach1.jpg";
 
 const page = () => {
   return (
@@ -121,7 +121,7 @@ const page = () => {
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center mt-8">
               <div className="relative order-2 lg:order-1">
                 <Image
-                  src={coach}
+                  src={coach1}
                   alt="ceo"
                   width={500}
                   height={500}
