@@ -29,7 +29,7 @@ const MainNav = () => {
             <Button
               asChild
               variant="secondary"
-              className="hidden sm:inline-flex bg-green-600 hover:bg-green-700 text-white font-semibold"
+              className=" sm:inline-flex bg-green-600 hover:bg-green-700 text-white font-semibold"
             >
               <Link href="/contact">Book Session</Link>
             </Button>

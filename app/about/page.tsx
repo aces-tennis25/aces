@@ -60,6 +60,7 @@ const page = () => {
 
       {/* stats */}
       <div className=" relative">{/* <Stats /> */}</div>
+      
 
       {/* academy journey */}
       <section className="py-20 bg-gray-50">

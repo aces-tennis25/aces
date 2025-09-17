@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { SlPeople } from "react-icons/sl";
@@ -14,7 +14,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 
 import { motion } from "framer-motion";
 
-const images = ["/hero1.jpg", "/hero2.jpeg"];
+// const images = ["/hero1.jpg", "/hero2.jpeg"];
 const sessions = [
   {
     icon: <SlPeople />,
@@ -71,22 +71,25 @@ const gallery = [
 ];
 
 const Hero = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  //   }, 4000);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   return (
     <div className="min-h-screen flex flex-col ">
       <section
         className="2xl:h-[900px] max-xl:h-screen bg-cover bg-center  transition-all duration-500 ease-in-out"
-        style={{ backgroundImage: `url(${images[currentIndex]})` }}
+        // style={{ backgroundImage: `url(${images[currentIndex]})` }}
       >
-        <div className="absolute inset-0 bg-black/30 "></div>
+        <video autoPlay muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+          <source src="/videos/tennis2.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-green-950/70 "></div>
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -98,7 +101,7 @@ const Hero = () => {
           className="absolute inset-0 flex flex-col items-center justify-center text-center   mt-20 max-xl:mt-10 p-40"
         >
           <h1 className="2xl:text-7xl 2xl:w-[600px] text-5xl  text-white font-bold">
-            Best <span className="text-green-600">Tennis Training</span>
+            Best <span className="text-green-600">Tennis Training </span>
             Program
           </h1>
           <p className="text-white w-full 2xl:max-w-[700px] max-xl:w-[350px] text-lg mt-4">
