@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import about from "@/public/about.jpg";
 
+
+
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,6 +23,8 @@ import { LuMapPin } from "react-icons/lu";
 import { FiPhone } from "react-icons/fi";
 import { CiMail } from "react-icons/ci";
 import { MdAlarm } from "react-icons/md";
+
+
 
 const InputLabel = [
   {
@@ -43,10 +47,10 @@ const InputLabel = [
     placeholder: "Enter experience level",
     id: "experience",
     selectItems: [
-      "Beginner (Never Played)",
-      "Novice (Some Experience)",
-      "Intermediate (1-3 years)",
-      "Advanced (3+ years)",
+      "Beginner (Children 3-10)",
+      "Beginner (Adult)",
+      "Intermediate",
+      "Advanced",
       "Competitive Player",
     ],
     required: true,
@@ -59,6 +63,7 @@ const InputLabel = [
       "Private Sessions",
       "Group Sessions",
       "Consultation",
+      "Cardio Tennis",
       "Other",
     ],
     required: true,
@@ -112,12 +117,12 @@ const questionsInfo = [
   {
     title: "What age groups do you accept?",
     response:
-      "We welcome students from age 6 to adults. Our programs are tailored to different age groups and skill levels.",
+      "We welcome students from age 3 to adults. Our programs are tailored to different age groups and skill levels.",
   },
   {
-    title: "Do you offer trial sessions?",
+    title: "Do you offer evaluation sessions?",
     response:
-      "Yes! We offer a complimentary 30-minute trial session for new students to experience our coaching style and facilities.",
+      "Yes! We offer a complimentary 30-minute evaluation session for new students to experience our coaching style and facilities.",
   },
   {
     title: "How do I book a session?",

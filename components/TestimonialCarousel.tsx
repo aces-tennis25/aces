@@ -8,11 +8,11 @@ import { CiStar } from "react-icons/ci";
 
 const reviews = [
   {
-    name: "Sarah Johnson",
+    name: "Precious Morgan",
     role: "Parent of Student",
     Image: "/sarah.jpg",
     Content:
-      "My daughter has been training here for 2 years and the improvement is incredible. The coaches are patient, professional and intentional about each student's growth.",
+      "Coach Abel has been coaching Nhylan Westmoreland since the age of 9. He is a professional and highly skilled tennis instructor, dedicated to teaching players both the technical and mental aspects of the game. Coach Abel always emphasizes giving 100% effort, whether you win or lose.His approach goes beyond tennis, he provides young athletes with valuable mental and physical training that benefits them in any sport.",
     rating: 5,
   },
   {

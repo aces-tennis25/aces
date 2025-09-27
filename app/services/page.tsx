@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +18,7 @@ import { FaCertificate } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import BookingModal from "@/components/BookingModal";
 
 const serviceData = [
   {
@@ -32,8 +33,9 @@ const serviceData = [
     ],
     price: "$100",
     time: "per hour session",
-    btnText: "Book Private Session",
+    btnText: "Book Private Session & Pay Now",
     isPopular: false,
+    serviceType: "private" as const
   },
   {
     name: "Group Sessions",
@@ -47,8 +49,9 @@ const serviceData = [
     ],
     price: "$40",
     time: "per person/session",
-    btnText: "Join Group Session",
+    btnText: "Join Group Session & Pay Now",
     isPopular: false,
+    serviceType: "group" as const
   },
   {
     name: "Cardio Tennis",
@@ -56,8 +59,9 @@ const serviceData = [
     text: "Fun like fitness tennis session that improves your cardio while you improve your game and catch fun.",
     price: "$20",
     time: "per person/session",
-    btnText: "Join Cardio Tennis",
+    btnText: "Join Cardio Tennis & Pay Now",
     isPopular: false,
+    serviceType: "cardio" as const
   },
   {
     name: "Consultations",
@@ -71,8 +75,9 @@ const serviceData = [
     ],
     price: "$150",
     time: "per consultation",
-    btnText: "Book Consultation",
+    btnText: "Book Consultation & Pay Now",
     isPopular: false,
+    serviceType: "consultation" as const
   },
 ];
 
@@ -189,7 +194,20 @@ const getBadgeColor = (item: LevelItem): string => {
 };
 // };
 
-const page = () => {
+const Page = () => {
+  const [bookingModal, setBookingModal] = useState({
+    isOpen: false,
+    serviceType: "private" as "private" | "group" | "cardio"| "consultation",
+  })
+  const openBookingModal = (serviceType: "private" | "group" | "cardio" | "consultation") => {
+    setBookingModal({isOpen: true, serviceType})
+  }
+
+  const closeBookingModal = () => {
+    setBookingModal({isOpen: false, serviceType: "private"})
+  }
+
+  
   return (
     <section className="min-h-screen">
       <div className="relative h-[500px] w-full group cursor-pointer overflow-hidden">
@@ -291,8 +309,8 @@ const page = () => {
                     </div>
                   </div>
 
-                  <Button className=" w-full bg-green-600 text-center text-white hover:bg-green-700 cursor-pointer">
-                    <Link href="/contact">{item.btnText}</Link>
+                  <Button className=" w-full bg-green-600 text-center text-white font-semibold hover:bg-green-700 cursor-pointer" onClick={() => openBookingModal(item.serviceType)}>
+                    {/* <Link href="/payment">{item.btnText}</Link> */} {item.btnText}
                   </Button>
                 </CardContent>
               </Card>
@@ -419,8 +437,10 @@ const page = () => {
           </Button>
         </div>
       </section>
+
+      <BookingModal isOpen={bookingModal.isOpen} onClose={closeBookingModal} serviceType={bookingModal.serviceType} />
     </section>
   );
 };
 
-export default page;
+export default Page;
