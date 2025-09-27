@@ -1,4 +1,10 @@
-export default function paymentSuccess({searchParams: {amount}, }: {searchParams: {amount: string}}) {
+interface pageProps {
+    searchParams: Promise<{amount?: string}>
+}
+
+export default async function paymentSuccess({searchParams }: pageProps) {
+    const params = await searchParams;
+    const amount = params.amount
     return (
         <main className="max-w-6xl mx-auto p-10 text-white text-center border m-10 rounded-md bg-gradient-to-tr from-blue-500 to-purple-500">
             <div className="mb-10">
