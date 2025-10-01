@@ -128,7 +128,7 @@ const Hero = () => {
 
         {/* card section */}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center mt-5 ">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center mt-5 " data-aos="zoom-in">
           {sessions.map((item, index) => (
             <Card
               key={index}
@@ -170,7 +170,7 @@ const Hero = () => {
               Experience the energy and passion of our tennis community
             </p>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mt-4 py-10">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mt-4 py-10" data-aos="fade-down">
             {gallery.map((item, index) => (
               <div
                 key={index}

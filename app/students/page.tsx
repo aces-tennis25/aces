@@ -96,12 +96,12 @@ const studentsInfo = [
 
 const feedback = [
   {
-    name: "Maya Patel",
+    name: "Leena Manadan",
     feedback:
-      "The coaches here really care about each student's individual progress. I've improved so much in just one year!",
+      "I have improved a lot after training with Coach Abel. The group sessions are so much fun and the coaches are very supportive. I enjoy coming to train and I am very inspired by Coach Abel.",
     image: "/maya.jpg",
-    level: "Beginner Level",
-    Age: "10",
+    level: "Intermediate Level",
+    Age: "14",
   },
   {
     name: "Lily Chen",
@@ -251,9 +251,15 @@ const page = () => {
             </p>
           </div>
           {/* Testimonials will go here */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div
+            className="grid md:grid-cols-3 gap-8"
+           
+          >
             {feedback.map((item, index) => (
-              <Card key={index} className="border-0 shadow-lg bg-white">
+              <Card key={index} className="border-0 shadow-lg bg-white"  data-aos="fade-left"
+            data-aos-anchor="#example-anchor"
+            data-aos-offset="500"
+            data-aos-duration="500">
                 <CardContent className="p-6">
                   <div className="flex items-center space-x-1 mb-4">
                     {[...Array(5)].map((_, i) => (

@@ -4,6 +4,8 @@ import "./globals.css";
 import MainNav from "@/components/MainNav";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer"
+import AOSInit from "@/components/AOSInit"
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +38,7 @@ export default function RootLayout({
         <div className="w-full max-w-[1130px] px-[15px] mx-auto">
           <Header />
         </div>
+        <AOSInit />
         {children}
         <div className="w-full ">
           <Footer />
